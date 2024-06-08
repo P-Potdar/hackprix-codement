@@ -1,5 +1,5 @@
 """
-ASGI config for Deep_fake_Detection project.
+ASGI config for Deep_fake_Django project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 

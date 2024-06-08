@@ -1,5 +1,5 @@
 """
-URL configuration for Deep_fake_Detection project.
+URL configuration for Deep_fake_Django project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
