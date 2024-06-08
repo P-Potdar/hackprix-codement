@@ -49,3 +49,23 @@
 </div>
 </div>
 {%endblock%}
+{%block js_cripts%}
+<script src="{%static 'js/script.js'%}"></script>
+<script>
+    $(function () {
+        var sliderSequenceNumbers = [10,40];
+        var slider = $("div#slider").slider({
+            value: 1,
+            min: 0,
+            max: sliderSequenceNumbers.length-1,
+            slide: function (event, ui) {
+                $('#{{form.sequence_length.id_for_label}}').val(sliderSequenceNumbers[ui.value]);
+                $('#{{form.sequence_length.id_for_label}}').val(sliderSequenceNumbers[ui.value]);
+                $('#slider-value').html(sliderSequenceNumbers[ui.value]);
+            }
+        });
+        $("#{{form.sequence_length.id_for_label}}").val(sliderSequenceNumbers[$("#slider").slider("value")]);
+        $('#slider-value').html(sliderSequenceNumbers[$("#slider").slider("value")]);
+    });
+</script>
+{%endblock%}
