@@ -9,23 +9,23 @@ from pathlib import Path
 
 from mtcnn.mtcnn import MTCNN
 def extract_multiple_videos(intput_filenames, image_path_infile):
-
-i = 1  
-    cap = cv2.VideoCapture('your_video_file_path.avi' or intput_filenames)
-if (cap.isOpened()== False):
+    i = 1  
+    
+    cap = cv2.VideoCapture('D://DDP/dataset/vid1.mp4' or intput_filenames)
+    if (cap.isOpened()== False):
         print("Error opening file")
 
 while True:
-        ret, frame = cap.read() 
-            
-        if ret:
-            cv2.imwrite(os.path.join(image_path_infile , str(i) + '.jpg'), frame)
+    ret, frame = cap.read()  
+        
+    if ret:
+        cv2.imwrite(os.path.join(image_path_infile , str(i) + '.jpg'), frame) 
+        cv2.imshow('frame', frame) 
+        i += 1 # Advance file counter
+    else:
+    
+        break
 
-            cv2.imshow('frame', frame)  
-        i += 1
-        else:
-
-            break
 
 cv2.waitKey(50) #Wait 50msec
 cap.release()
